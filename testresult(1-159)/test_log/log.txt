@@ -1,0 +1,23 @@
+[08:16:20.783] Namespace(ckpt='/root/autodl-tmp/SAM_ckpt/sam_vit_b_01ec64.pth', config=None, dataset='Synapse', deterministic=1, img_size=512, input_size=224, is_savenii=True, list_dir='./lists/lists_Synapse/', lora_ckpt='/root/autodl-tmp/SAMed1/results/Synapse_512_pretrain_vit_b_epo200_bs12_lr0.005/epoch_159.pth', module='sam_lora_image_encoder', num_classes=13, output_dir='testresult', rank=4, seed=1234, vit_name='vit_b', volume_path='/root/autodl-tmp/dataset/Synapse/test_vol_h5')
+[08:16:20.785] 6 test iterations per epoch
+[08:21:48.405] idx 0 case case0035 mean_dice 0.600905 mean_hd95 12.597545
+[08:32:31.491] idx 1 case case0036 mean_dice 0.631930 mean_hd95 16.785195
+[08:38:05.388] idx 2 case case0037 mean_dice 0.609882 mean_hd95 31.717023
+[08:43:36.366] idx 3 case case0038 mean_dice 0.531509 mean_hd95 38.519469
+[08:48:32.296] idx 4 case case0039 mean_dice 0.568715 mean_hd95 8.604359
+[08:59:51.197] idx 5 case case0040 mean_dice 0.620954 mean_hd95 8.425932
+[08:59:51.360] Mean class 1 name spleen mean_dice 0.889720 mean_hd95 41.571323
+[08:59:51.360] Mean class 2 name right kidney mean_dice 0.862167 mean_hd95 37.068343
+[08:59:51.360] Mean class 3 name left kidney mean_dice 0.884813 mean_hd95 49.705890
+[08:59:51.360] Mean class 4 name gallbladder mean_dice 0.000000 mean_hd95 0.000000
+[08:59:51.360] Mean class 5 name  esophagus mean_dice 0.686612 mean_hd95 7.502639
+[08:59:51.360] Mean class 6 name  liver mean_dice 0.919764 mean_hd95 36.596915
+[08:59:51.360] Mean class 7 name stomach mean_dice 0.722866 mean_hd95 26.762471
+[08:59:51.360] Mean class 8 name aorta mean_dice 0.802213 mean_hd95 11.799442
+[08:59:51.360] Mean class 9 name inferior vena cava mean_dice 0.691863 mean_hd95 13.178995
+[08:59:51.360] Mean class 10 name portal vein and splenic vein mean_dice 0.604224 mean_hd95 15.557847
+[08:59:51.360] Mean class 11 name pancreas mean_dice 0.657531 mean_hd95 12.996768
+[08:59:51.360] Mean class 12 name right adrenal gland mean_dice 0.000000 mean_hd95 0.000000
+[08:59:51.360] Mean class 13 name left adrenal gland mean_dice 0.000000 mean_hd95 0.000000
+[08:59:51.360] Testing performance in best val model: mean_dice : 0.593983 mean_hd95 : 19.441587
+[08:59:51.360] Testing Finished!
