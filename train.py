@@ -16,13 +16,8 @@ from icecream import ic
 
 parser = argparse.ArgumentParser()
 parser.add_argument('--root_path', type=str,
-<<<<<<< HEAD
-                    default='/root/autodl-tmp/dataset/Synapse/train_npz_new_224', help='root dir for data')
-parser.add_argument('--output', type=str, default='/root/autodl-tmp/SAMed1/results')
-=======
-                    default='/root/autodl-tmp/dataset/Synapse1/train_npz_new_224', help='root dir for data')
-parser.add_argument('--output', type=str, default='/root/autodl-tmp/SAMed1/results1')
->>>>>>> lhy
+                    default='/root/autodl-tmp/dataset/Synapse2/train_npz_new_224', help='root dir for data')
+parser.add_argument('--output', type=str, default='results3')
 parser.add_argument('--dataset', type=str,
                     default='Synapse', help='experiment_name')
 parser.add_argument('--list_dir', type=str,
@@ -32,14 +27,10 @@ parser.add_argument('--num_classes', type=int,
 parser.add_argument('--max_iterations', type=int,
                     default=30000, help='maximum epoch number to train')
 
-# parser.add_argument('--max_epochs', type=int,
-#                     default=200, help='maximum epoch number to train')
-# parser.add_argument('--stop_epoch', type=int,
-#                     default=160, help='maximum epoch number to train')
 parser.add_argument('--max_epochs', type=int,
-                    default=80, help='maximum epoch number to train')
+                    default=200, help='maximum epoch number to train')
 parser.add_argument('--stop_epoch', type=int,
-                    default=80, help='maximum epoch number to train')
+                    default=160, help='maximum epoch number to train')
 
 parser.add_argument('--batch_size', type=int,
                     default=12, help='batch_size per gpu')
@@ -47,10 +38,10 @@ parser.add_argument('--n_gpu', type=int, default=1, help='total gpu')
 parser.add_argument('--deterministic', type=int, default=1,
                     help='whether use deterministic training')
 
-# parser.add_argument('--base_lr', type=float, default=0.005,
-#                     help='segmentation network learning rate')
-parser.add_argument('--base_lr', type=float, default=1e-5,
+
+parser.add_argument('--base_lr', type=float, default=0.005,
                     help='segmentation network learning rate')
+
 
 parser.add_argument('--img_size', type=int,
                     default=512, help='input patch size of network input')
@@ -61,12 +52,9 @@ parser.add_argument('--vit_name', type=str,
 parser.add_argument('--ckpt', type=str, default='/root/autodl-tmp/SAM_ckpt/sam_vit_b_01ec64.pth',
                     help='Pretrained checkpoint')
 
-# parser.add_argument('--lora_ckpt', type=str, default=None, help='Finetuned lora checkpoint')
-<<<<<<< HEAD
-parser.add_argument('--lora_ckpt', type=str, default='/root/autodl-tmp/SAMed1/results/Synapse_512_pretrain_vit_b_epo200_bs12_lr0.005/epoch_159.pth', help='Finetuned lora checkpoint')
-=======
-parser.add_argument('--lora_ckpt', type=str, default='/root/autodl-tmp/SAMed1/results1/Synapse_512_pretrain_vit_b_epo200_bs12_lr0.005/epoch_159.pth', help='Finetuned lora checkpoint')
->>>>>>> lhy
+
+parser.add_argument('--lora_ckpt', type=str, default=None, help='Finetuned lora checkpoint')
+
 
 parser.add_argument('--rank', type=int, default=4, help='Rank for LoRA adaptation')
 parser.add_argument('--warmup', action='store_true', help='If activated, warp up the learning from a lower lr to the base_lr')

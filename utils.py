@@ -126,6 +126,7 @@ def test_single_volume(image, label, net, classes, multimask_output, patch_size=
                 slice = zoom(slice, (patch_size[0] / new_x, patch_size[1] / new_y), order=3)  # previous using 0, patch_size[0], patch_size[1]
             inputs = torch.from_numpy(slice).unsqueeze(0).unsqueeze(0).float().cuda()
             inputs = repeat(inputs, 'b c h w -> b (repeat c) h w', repeat=3)
+            
             net.eval()
             with torch.no_grad():
                 outputs = net(inputs, multimask_output, patch_size[0])

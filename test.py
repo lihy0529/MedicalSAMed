@@ -17,7 +17,6 @@ from datasets.dataset_synapse import Synapse_dataset
 from icecream import ic
 
 
-# class_to_name = {1: 'spleen', 2: 'right kidney', 3: 'left kidney', 4: 'gallbladder', 5: 'liver', 6: 'stomach', 7: 'aorta', 8: 'pancreas'}
 class_to_name = {1: 'spleen', 2: 'right kidney', 3: 'left kidney', 4: 'gallbladder', 5: ' esophagus', 6: ' liver', 7: 'stomach', 8: 'aorta'
                  ,9:'inferior vena cava', 10: 'portal vein and splenic vein', 11:'pancreas', 
                  12:'right adrenal gland', 13:'left adrenal gland'}
@@ -67,7 +66,7 @@ if __name__ == '__main__':
     parser.add_argument('--dataset', type=str, default='Synapse', help='Experiment name')
     parser.add_argument('--num_classes', type=int, default=13)
     parser.add_argument('--list_dir', type=str, default='./lists/lists_Synapse/', help='list_dir')
-    parser.add_argument('--output_dir', type=str, default='/output')
+    parser.add_argument('--output_dir', type=str, default='testresult')
     parser.add_argument('--img_size', type=int, default=512, help='Input image size of the network')
     parser.add_argument('--input_size', type=int, default=224, help='The input size for training SAM model')
     parser.add_argument('--seed', type=int,
@@ -77,13 +76,8 @@ if __name__ == '__main__':
     parser.add_argument('--ckpt', type=str, default='/root/autodl-tmp/SAM_ckpt/sam_vit_b_01ec64.pth',
                         help='Pretrained checkpoint')
     
-    # parser.add_argument('--lora_ckpt', type=str, default='/root/autodl-tmp/SAMed0/lora_ckpt/epoch_159.pth', help='The checkpoint from LoRA')
-    # parser.add_argument('--lora_ckpt', type=str, default='/root/autodl-tmp/SAMed1/results/Synapse_512_pretrain_vit_b_epo200_bs12_lr0.005/epoch_159.pth', help='The checkpoint from LoRA')
-<<<<<<< HEAD
-    parser.add_argument('--lora_ckpt', type=str, default='/root/autodl-tmp/SAMed1/results/Synapse_512_pretrain_vit_b_epo80_bs12_lr1e-05/epoch_55.pth', help='The checkpoint from LoRA')
-=======
-    parser.add_argument('--lora_ckpt', type=str, default='/root/autodl-tmp/SAMed1/results1/Synapse_512_pretrain_vit_b_epo80_bs12_lr1e-05/epoch_79.pth', help='The checkpoint from LoRA')
->>>>>>> lhy
+    
+    parser.add_argument('--lora_ckpt', type=str, default='results3/Synapse_512_pretrain_vit_b_epo200_bs12_lr0.005/epoch_159.pth', help='The checkpoint from LoRA')
     
     parser.add_argument('--vit_name', type=str, default='vit_b', help='Select one vit model')
     parser.add_argument('--rank', type=int, default=4, help='Rank for LoRA adaptation')

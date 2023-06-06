@@ -12,15 +12,9 @@ from icecream import ic
 
 parser = argparse.ArgumentParser()
 parser.add_argument('--src_path', type=str,
-<<<<<<< HEAD
-                   default='/root/autodl-tmp/dataset/RawData', help='download path for Synapse data')
-parser.add_argument('--dst_path', type=str,
-                   default='/root/autodl-tmp/dataset/Synapse', help='root dir for data')
-=======
                    default='/root/autodl-tmp/dataset/RawData copy', help='download path for Synapse data')
 parser.add_argument('--dst_path', type=str,
                    default='/root/autodl-tmp/dataset/Synapse2', help='root dir for data')
->>>>>>> lhy
 parser.add_argument('--use_normalize', action='store_true', default=True,
                    help='use normalize')
 args = parser.parse_args()
@@ -43,15 +37,11 @@ hashmap = {1:1, 2:2, 3:3, 4:4, 5:5, 6:6, 7:7, 8:8, 9:9, 10:10, 11:11, 12:12, 13:
 # (12) right adrenal gland
 # (13) left adrenal gland
 
-<<<<<<< HEAD
-
-=======
 def checkorgan(num,label):
     found = np.any(label == num)
     if(found):
         return True
     
->>>>>>> lhy
 def preprocess_train_image(image_files: str, label_files: str) -> None:
     os.makedirs(f"{args.dst_path}/train_npz", exist_ok=True)
 
@@ -93,7 +83,15 @@ def preprocess_train_image(image_files: str, label_files: str) -> None:
             save_path = f"{args.dst_path}/train_npz/case{number}_slice{dep:03d}.npz"
             np.savez(save_path, label=label_data[dep,:,:], image=image_data[dep,:,:])
             
-            if checkorgan(4,label_data[dep,:,:]) or checkorgan(12,label_data[dep,:,:]) or checkorgan(13,label_data[dep,:,:]):
+            if checkorgan(4,label_data[dep,:,:]) or checkorgan(5,label_data[dep,:,:]) or checkorgan(12,label_data[dep,:,:]) or checkorgan(13,label_data[dep,:,:]):
+                save_path = f"{args.dst_path}/train_npz/case{number}_slice{totallen:03d}.npz"
+                np.savez(save_path, label=label_data[dep,:,:], image=image_data[dep,:,:])
+                totallen+=1
+                
+                save_path = f"{args.dst_path}/train_npz/case{number}_slice{totallen:03d}.npz"
+                np.savez(save_path, label=label_data[dep,:,:], image=image_data[dep,:,:])
+                totallen+=1
+                
                 save_path = f"{args.dst_path}/train_npz/case{number}_slice{totallen:03d}.npz"
                 np.savez(save_path, label=label_data[dep,:,:], image=image_data[dep,:,:])
                 totallen+=1

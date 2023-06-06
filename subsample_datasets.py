@@ -25,13 +25,9 @@ def main(args):
 
 if __name__ == '__main__':
     parser = argparse.ArgumentParser()
-<<<<<<< HEAD
-    parser.add_argument('--root', type=str, default='/root/autodl-tmp/dataset/Synapse/train_npz/')
-    parser.add_argument('--output', type=str, default='/root/autodl-tmp/dataset/Synapse/train_npz_new')
-=======
-    parser.add_argument('--root', type=str, default='/root/autodl-tmp/dataset/Synapse1/train_npz/')
-    parser.add_argument('--output', type=str, default='/root/autodl-tmp/dataset/Synapse1/train_npz_new')
->>>>>>> lhy
+    
+    parser.add_argument('--root', type=str, default='/root/autodl-tmp/dataset/Synapse2/train_npz/')
+    parser.add_argument('--output', type=str, default='/root/autodl-tmp/dataset/Synapse2/train_npz_new')
     parser.add_argument('--ds_res', type=int, default=224, help='Downsample resulution')
     args = parser.parse_args()
     main(args)
