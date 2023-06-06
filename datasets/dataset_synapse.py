@@ -16,7 +16,7 @@ def random_rotate(image, label):
     label = ndimage.rotate(label, angle, order=0, reshape=False)
     return image, label
 
-
+ 
 class RandomGenerator(object):
     def __init__(self, output_size, low_res):
         self.output_size = output_size
